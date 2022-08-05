@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.9 on win32)" generated="20220805 15:57:07.514" rpa="false" schemaversion="3">
+<suite id="s1" name="TC" source="C:\Users\ett19809\PycharmProjects\LahtiRestaurantFinder\TC.robot">
+<test id="s1-t1" name="Test case" line="14">
+<kw name="Begin webtest" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220805 15:57:07.880" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<status status="PASS" starttime="20220805 15:57:07.880" endtime="20220805 15:57:12.181"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220805 15:57:12.181" endtime="20220805 15:57:12.304"/>
+</kw>
+<kw name="accept cookies" library="Common">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${COOKIES}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220805 15:57:12.304" endtime="20220805 15:57:12.334"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${COOKIES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220805 15:57:12.339" level="INFO">Clicking element 'xpath=(//div[@class='QS5gu sy4vM'])[2]'.</msg>
+<status status="PASS" starttime="20220805 15:57:12.334" endtime="20220805 15:57:12.416"/>
+</kw>
+<status status="PASS" starttime="20220805 15:57:12.304" endtime="20220805 15:57:12.416"/>
+</kw>
+<status status="PASS" starttime="20220805 15:57:07.880" endtime="20220805 15:57:12.416"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>go to Google</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220805 15:57:12.425" level="INFO">go to Google</msg>
+<status status="PASS" starttime="20220805 15:57:12.424" endtime="20220805 15:57:12.425"/>
+</kw>
+<kw name="search for restaurants in Lahti" library="google">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Google_input_bar}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220805 15:57:12.426" endtime="20220805 15:57:12.447"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Google_input_bar}</arg>
+<arg>Best restaurants in Lahti</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220805 15:57:12.447" level="INFO">Typing text 'Best restaurants in Lahti' into text field 'xpath=//input[@name='q']'.</msg>
+<status status="PASS" starttime="20220805 15:57:12.447" endtime="20220805 15:57:12.723"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${Google_input_bar}</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20220805 15:57:12.724" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@name='q'] element.</msg>
+<msg timestamp="20220805 15:57:13.072" level="INFO">Pressing special key ENTER to element.</msg>
+<msg timestamp="20220805 15:57:13.072" level="INFO">Releasing special key ENTER.</msg>
+<status status="PASS" starttime="20220805 15:57:12.723" endtime="20220805 15:57:15.694"/>
+</kw>
+<status status="PASS" starttime="20220805 15:57:12.426" endtime="20220805 15:57:15.694"/>
+</kw>
+<kw name="get restaurant names" library="google">
+<var>@{RestaurantNames}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${r1_name}</var>
+<arg>${r1_location}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220805 15:57:15.854" level="INFO">${r1_name} = Viikinkiravintola Harald</msg>
+<status status="PASS" starttime="20220805 15:57:15.699" endtime="20220805 15:57:15.854"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${r2_name}</var>
+<arg>${r2_location}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220805 15:57:16.005" level="INFO">${r2_name} = Bistro Popot</msg>
+<status status="PASS" starttime="20220805 15:57:15.854" endtime="20220805 15:57:16.005"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${r3_name}</var>
+<arg>${r3_location}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220805 15:57:16.129" level="INFO">${r3_name} = Ravintola Roux</msg>
+<status status="PASS" starttime="20220805 15:57:16.005" endtime="20220805 15:57:16.129"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${r1_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220805 15:57:16.129" level="INFO">Viikinkiravintola Harald</msg>
+<status status="PASS" starttime="20220805 15:57:16.129" endtime="20220805 15:57:16.129"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${r2_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220805 15:57:16.129" level="INFO">Bistro Popot</msg>
+<status status="PASS" starttime="20220805 15:57:16.129" endtime="20220805 15:57:16.129"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${r3_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220805 15:57:16.134" level="INFO">Ravintola Roux</msg>
+<status status="PASS" starttime="20220805 15:57:16.129" endtime="20220805 15:57:16.134"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{Data}</var>
+<arg>${r1_name}</arg>
+<arg>${r2_name}</arg>
+<arg>${r3_name}</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220805 15:57:16.134" level="INFO">@{Data} = [ Viikinkiravintola Harald | Bistro Popot | Ravintola Roux ]</msg>
+<status status="PASS" starttime="20220805 15:57:16.134" endtime="20220805 15:57:16.134"/>
+</kw>
+<msg timestamp="20220805 15:57:16.134" level="INFO">@{RestaurantNames} = [ Viikinkiravintola Harald | Bistro Popot | Ravintola Roux ]</msg>
+<status status="PASS" starttime="20220805 15:57:15.694" endtime="20220805 15:57:16.134"/>
+</kw>
+<kw name="go to the first restaurant" library="google">
+<arg>@{RestaurantNames} [1]</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${r1_location}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220805 15:57:16.139" level="INFO">Clicking element 'xpath=(//span[@class='OSrXXb'])[1]'.</msg>
+<status status="PASS" starttime="20220805 15:57:16.139" endtime="20220805 15:57:17.451"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>(//a[text()='ravintolaharald.fi'])[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220805 15:57:17.451" endtime="20220805 15:57:18.495"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(//a[text()='ravintolaharald.fi'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220805 15:57:18.495" level="INFO">Clicking element '(//a[text()='ravintolaharald.fi'])[1]'.</msg>
+<status status="PASS" starttime="20220805 15:57:18.495" endtime="20220805 15:57:21.814"/>
+</kw>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220805 15:57:21.824" level="INFO">${title} = Viikinkiravintola Harald</msg>
+<status status="PASS" starttime="20220805 15:57:21.814" endtime="20220805 15:57:21.824"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${name}</arg>
+<arg>${title}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220805 15:57:21.824" endtime="20220805 15:57:21.824"/>
+</kw>
+<status status="PASS" starttime="20220805 15:57:16.134" endtime="20220805 15:57:21.824"/>
+</kw>
+<kw name="navigate to first restaurant's menu" library="RavintolaHarald">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>xpath=//a[text()='Lahti']</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220805 15:57:21.824" endtime="20220805 15:57:21.895"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//a[text()='Lahti']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220805 15:57:21.896" level="INFO">Clicking element 'xpath=//a[text()='Lahti']'.</msg>
+<status status="PASS" starttime="20220805 15:57:21.895" endtime="20220805 15:57:26.638"/>
+</kw>
+<status status="PASS" starttime="20220805 15:57:21.824" endtime="20220805 15:57:26.638"/>
+</kw>
+<kw name="go to menu of the first rerstaurant" library="RavintolaHarald">
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>click ok</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="click ok" library="RavintolaHarald">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[text()='OK']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220805 15:57:26.644" level="INFO">Clicking element '//button[text()='OK']'.</msg>
+<status status="PASS" starttime="20220805 15:57:26.644" endtime="20220805 15:57:26.790"/>
+</kw>
+<status status="PASS" starttime="20220805 15:57:26.643" endtime="20220805 15:57:26.793"/>
+</kw>
+<status status="PASS" starttime="20220805 15:57:26.643" endtime="20220805 15:57:26.793"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220805 15:57:27.793" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220805 15:57:26.793" endtime="20220805 15:57:27.793"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>//a[@title='Menut']</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20220805 15:57:27.793" level="INFO">Simulating Mouse Over on element '//a[@title='Menut']'.</msg>
+<status status="PASS" starttime="20220805 15:57:27.793" endtime="20220805 15:57:28.104"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//a[text()='A la Carte']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220805 15:57:28.104" endtime="20220805 15:57:28.134"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[text()='A la Carte']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220805 15:57:28.134" level="INFO">Clicking element '//a[text()='A la Carte']'.</msg>
+<status status="PASS" starttime="20220805 15:57:28.134" endtime="20220805 15:57:30.905"/>
+</kw>
+<status status="PASS" starttime="20220805 15:57:26.642" endtime="20220805 15:57:30.905"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<var>${HaraldMenu}</var>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220805 15:57:30.905" level="FAIL">Keyword 'BuiltIn.Set Global Variable' expected at least 1 argument, got 0.</msg>
+<status status="FAIL" starttime="20220805 15:57:30.905" endtime="20220805 15:57:30.905"/>
+</kw>
+<kw name="get the ravintola harald's menu" library="RavintolaHarald">
+<var>${HaraldMenu}</var>
+<status status="NOT RUN" starttime="20220805 15:57:30.905" endtime="20220805 15:57:30.905"/>
+</kw>
+<kw name="End webtest" library="Common" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220805 15:57:35.924" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220805 15:57:30.914" endtime="20220805 15:57:35.924"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220805 15:57:35.924" endtime="20220805 15:57:38.144"/>
+</kw>
+<status status="PASS" starttime="20220805 15:57:30.914" endtime="20220805 15:57:38.144"/>
+</kw>
+<tag>tst</tag>
+<status status="FAIL" starttime="20220805 15:57:07.874" endtime="20220805 15:57:38.144">Keyword 'BuiltIn.Set Global Variable' expected at least 1 argument, got 0.</status>
+</test>
+<test id="s1-t2" name="email" line="26">
+<kw name="Begin webtest" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220805 15:57:38.154" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<status status="PASS" starttime="20220805 15:57:38.144" endtime="20220805 15:57:46.177"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220805 15:57:46.177" endtime="20220805 15:57:46.315"/>
+</kw>
+<kw name="accept cookies" library="Common">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${COOKIES}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220805 15:57:46.315" endtime="20220805 15:57:46.344"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${COOKIES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220805 15:57:46.344" level="INFO">Clicking element 'xpath=(//div[@class='QS5gu sy4vM'])[2]'.</msg>
+<status status="PASS" starttime="20220805 15:57:46.344" endtime="20220805 15:57:46.424"/>
+</kw>
+<status status="PASS" starttime="20220805 15:57:46.315" endtime="20220805 15:57:46.424"/>
+</kw>
+<status status="PASS" starttime="20220805 15:57:38.144" endtime="20220805 15:57:46.424"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${HaraldMenu}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220805 15:57:46.424" level="FAIL">Variable '${HaraldMenu}' not found.</msg>
+<status status="FAIL" starttime="20220805 15:57:46.424" endtime="20220805 15:57:46.424"/>
+</kw>
+<kw name="End webtest" library="Common" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220805 15:57:51.443" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220805 15:57:46.435" endtime="20220805 15:57:51.443"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220805 15:57:51.443" endtime="20220805 15:57:53.584"/>
+</kw>
+<status status="PASS" starttime="20220805 15:57:46.434" endtime="20220805 15:57:53.584"/>
+</kw>
+<status status="FAIL" starttime="20220805 15:57:38.144" endtime="20220805 15:57:53.584">Variable '${HaraldMenu}' not found.</status>
+</test>
+<status status="FAIL" starttime="20220805 15:57:07.514" endtime="20220805 15:57:53.590"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">tst</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="TC">TC</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
