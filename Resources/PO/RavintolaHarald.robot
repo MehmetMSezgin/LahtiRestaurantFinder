@@ -4,11 +4,11 @@ Library    SeleniumLibrary
 *** Variables ***
 
 *** Keywords ***
-navigate to first restaurant's menu
+navigate to Harald restaurant's menu
     wait until element is enabled    xpath=//a[text()='Lahti']
     click element    xpath=//a[text()='Lahti']
 
-go to menu of the first rerstaurant
+go to menu of Harald rerstaurant
     run keyword and continue on failure    click ok
     sleep    1s
     mouse over    //a[@title='Menut']

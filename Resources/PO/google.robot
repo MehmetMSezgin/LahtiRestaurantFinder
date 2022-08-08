@@ -26,13 +26,25 @@ get restaurant names
     @{Data} =    create list    ${r1_name}    ${r2_name}    ${r3_name}
     [Return]    @{Data}
 
-go to the first restaurant
+go to Ravintola Harald
     [Arguments]    ${name}
-    click element    ${r1_location}
+    click element    ${r2_location}
     wait until element is visible    (//a[text()='ravintolaharald.fi'])[1]
     click element    (//a[text()='ravintolaharald.fi'])[1]
     ${title} =   get title
     should contain    ${name}    ${title}
+
+go to Bistro Popot
+    [Arguments]    ${name}
+    click element    ${r1_location}
+    wait until element is visible    //a[text()='bistropopot.fi']
+    click element    //a[text()='bistropopot.fi']
+    ${title} =   get title
+    should contain    ${name}    ${title}
+
+
+
+
 
 
 
