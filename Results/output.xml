@@ -1,457 +1,376 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.7.9 on win32)" generated="20220809 12:11:21.599" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.7.9 on win32)" generated="20220809 16:42:38.583" rpa="false" schemaversion="3">
 <suite id="s1" name="TC" source="C:\Users\ett19809\PycharmProjects\LahtiRestaurantFinder\TC.robot">
-<test id="s1-t1" name="Get Harald Restaurant's menu" line="17">
+<test id="s1-t1" name="Send mail" line="38">
 <kw name="Begin webtest" library="Common" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220809 12:11:21.946" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
-<status status="PASS" starttime="20220809 12:11:21.946" endtime="20220809 12:11:24.354"/>
+<msg timestamp="20220809 16:42:38.963" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<status status="PASS" starttime="20220809 16:42:38.963" endtime="20220809 16:42:42.021"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220809 12:11:24.354" endtime="20220809 12:11:24.481"/>
+<status status="PASS" starttime="20220809 16:42:42.023" endtime="20220809 16:42:42.156"/>
 </kw>
 <kw name="accept cookies" library="Common">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${COOKIES}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220809 12:11:24.486" endtime="20220809 12:11:24.506"/>
+<status status="PASS" starttime="20220809 16:42:42.157" endtime="20220809 16:42:42.183"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${COOKIES}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:24.506" level="INFO">Clicking element 'xpath=(//div[@class='QS5gu sy4vM'])[2]'.</msg>
-<status status="PASS" starttime="20220809 12:11:24.506" endtime="20220809 12:11:24.560"/>
+<msg timestamp="20220809 16:42:42.184" level="INFO">Clicking element 'xpath=(//div[@class='QS5gu sy4vM'])[2]'.</msg>
+<status status="PASS" starttime="20220809 16:42:42.184" endtime="20220809 16:42:42.257"/>
 </kw>
-<status status="PASS" starttime="20220809 12:11:24.481" endtime="20220809 12:11:24.560"/>
+<status status="PASS" starttime="20220809 16:42:42.157" endtime="20220809 16:42:42.257"/>
 </kw>
-<status status="PASS" starttime="20220809 12:11:21.946" endtime="20220809 12:11:24.560"/>
+<status status="PASS" starttime="20220809 16:42:38.963" endtime="20220809 16:42:42.257"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>go to Google</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220809 12:11:24.563" level="INFO">go to Google</msg>
-<status status="PASS" starttime="20220809 12:11:24.563" endtime="20220809 12:11:24.563"/>
+<kw name="navigate to mail.com login page" library="Mail">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.mail.com/consentpage</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220809 16:42:42.257" level="INFO">Opening url 'https://www.mail.com/consentpage'</msg>
+<status status="PASS" starttime="20220809 16:42:42.257" endtime="20220809 16:42:43.333"/>
 </kw>
-<kw name="search for restaurants in Lahti" library="google">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${Google_input_bar}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220809 12:11:24.563" endtime="20220809 12:11:24.577"/>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://www.mail.com/company/privacypolicy/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220809 16:42:43.335" level="INFO">Opening url 'https://www.mail.com/company/privacypolicy/'</msg>
+<status status="PASS" starttime="20220809 16:42:43.335" endtime="20220809 16:42:45.604"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220809 16:42:48.614" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220809 16:42:45.604" endtime="20220809 16:42:48.614"/>
+</kw>
+<status status="PASS" starttime="20220809 16:42:42.257" endtime="20220809 16:42:48.614"/>
+</kw>
+<kw name="login by using the credentials" library="Mail">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@data-tracking-contentposition="header.icon.login"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220809 16:42:48.614" level="INFO">Clicking element '//a[@data-tracking-contentposition="header.icon.login"]'.</msg>
+<status status="PASS" starttime="20220809 16:42:48.614" endtime="20220809 16:42:49.406"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Search</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220809 16:42:49.406" endtime="20220809 16:42:49.424"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@id='login-button']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220809 16:42:49.424" level="INFO">Clicking element '//a[@id='login-button']'.</msg>
+<status status="PASS" starttime="20220809 16:42:49.424" endtime="20220809 16:42:49.490"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220809 16:42:49.490" endtime="20220809 16:42:49.613"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${Google_input_bar}</arg>
-<arg>Best restaurants in Lahti</arg>
+<arg>${login_locator}</arg>
+<arg>${login_mail}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:24.581" level="INFO">Typing text 'Best restaurants in Lahti' into text field 'xpath=//input[@name='q']'.</msg>
-<status status="PASS" starttime="20220809 12:11:24.577" endtime="20220809 12:11:24.683"/>
+<msg timestamp="20220809 16:42:49.618" level="INFO">Typing text 'EtteplanReceiver@europe.com' into text field '//*[@id='login-email']'.</msg>
+<status status="PASS" starttime="20220809 16:42:49.613" endtime="20220809 16:42:49.703"/>
 </kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${Google_input_bar}</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220809 12:11:24.683" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@name='q'] element.</msg>
-<msg timestamp="20220809 12:11:25.107" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20220809 12:11:25.107" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20220809 12:11:24.683" endtime="20220809 12:11:26.891"/>
-</kw>
-<status status="PASS" starttime="20220809 12:11:24.563" endtime="20220809 12:11:26.891"/>
-</kw>
-<kw name="get restaurant names" library="google">
-<var>@{RestaurantNames}</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${r1_name}</var>
-<arg>${r1_location}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:26.931" level="INFO">${r1_name} = Ravintola Taivaanranta</msg>
-<status status="PASS" starttime="20220809 12:11:26.891" endtime="20220809 12:11:26.931"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${r2_name}</var>
-<arg>${r2_location}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:26.982" level="INFO">${r2_name} = Coppa Eatery</msg>
-<status status="PASS" starttime="20220809 12:11:26.931" endtime="20220809 12:11:26.982"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${r3_name}</var>
-<arg>${r3_location}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:27.037" level="INFO">${r3_name} = Santa Fé</msg>
-<status status="PASS" starttime="20220809 12:11:26.982" endtime="20220809 12:11:27.037"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${r1_name}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220809 12:11:27.037" level="INFO">Ravintola Taivaanranta</msg>
-<status status="PASS" starttime="20220809 12:11:27.037" endtime="20220809 12:11:27.037"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${r2_name}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220809 12:11:27.041" level="INFO">Coppa Eatery</msg>
-<status status="PASS" starttime="20220809 12:11:27.040" endtime="20220809 12:11:27.042"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${r3_name}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220809 12:11:27.042" level="INFO">Santa Fé</msg>
-<status status="PASS" starttime="20220809 12:11:27.042" endtime="20220809 12:11:27.042"/>
-</kw>
-<kw name="Create List" library="BuiltIn">
-<var>@{Data}</var>
-<arg>${r1_name}</arg>
-<arg>${r2_name}</arg>
-<arg>${r3_name}</arg>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20220809 12:11:27.044" level="INFO">@{Data} = [ Ravintola Taivaanranta | Coppa Eatery | Santa Fé ]</msg>
-<status status="PASS" starttime="20220809 12:11:27.043" endtime="20220809 12:11:27.044"/>
-</kw>
-<msg timestamp="20220809 12:11:27.045" level="INFO">@{RestaurantNames} = [ Ravintola Taivaanranta | Coppa Eatery | Santa Fé ]</msg>
-<status status="PASS" starttime="20220809 12:11:26.891" endtime="20220809 12:11:27.045"/>
-</kw>
-<kw name="go to Ravintola Harald" library="google">
-<arg>@{RestaurantNames} [2]</arg>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>https://www.ravintolaharald.fi/</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220809 12:11:27.046" level="INFO">Opening url 'https://www.ravintolaharald.fi/'</msg>
-<status status="PASS" starttime="20220809 12:11:27.046" endtime="20220809 12:11:29.504"/>
-</kw>
-<kw name="Get Title" library="SeleniumLibrary">
-<var>${title}</var>
-<doc>Returns the title of the current page.</doc>
-<msg timestamp="20220809 12:11:29.516" level="INFO">${title} = Viikinkiravintola Harald</msg>
-<status status="PASS" starttime="20220809 12:11:29.504" endtime="20220809 12:11:29.516"/>
-</kw>
-<status status="PASS" starttime="20220809 12:11:27.046" endtime="20220809 12:11:29.516"/>
-</kw>
-<kw name="navigate to Harald restaurant's menu" library="RavintolaHarald">
-<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>xpath=//a[text()='Lahti']</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20220809 12:11:29.521" endtime="20220809 12:11:29.583"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_locator}</arg>
+<arg>${password_mail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220809 16:42:49.703" level="INFO">Typing text 'Password#1234' into text field '//*[@id='login-password']'.</msg>
+<status status="PASS" starttime="20220809 16:42:49.703" endtime="20220809 16:42:49.816"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//a[text()='Lahti']</arg>
+<arg>${Login_button}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:29.583" level="INFO">Clicking element 'xpath=//a[text()='Lahti']'.</msg>
-<status status="PASS" starttime="20220809 12:11:29.583" endtime="20220809 12:11:34.688"/>
+<msg timestamp="20220809 16:42:49.816" level="INFO">Clicking element '//button[@class='btn btn-block login-submit']'.</msg>
+<status status="PASS" starttime="20220809 16:42:49.816" endtime="20220809 16:42:54.644"/>
 </kw>
-<status status="PASS" starttime="20220809 12:11:29.521" endtime="20220809 12:11:34.688"/>
+<status status="PASS" starttime="20220809 16:42:48.614" endtime="20220809 16:42:54.644"/>
 </kw>
-<kw name="go to menu of Harald rerstaurant" library="RavintolaHarald">
-<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
-<arg>click ok</arg>
-<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
-<kw name="click ok" library="RavintolaHarald">
+<kw name="send the mail" library="Mail">
+<kw name="compose mail" library="Mail">
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>//button[text()='OK']</arg>
+<arg>(//span[text()='E-mail'])[1]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:34.691" level="INFO">Clicking element '//button[text()='OK']'.</msg>
-<status status="PASS" starttime="20220809 12:11:34.691" endtime="20220809 12:11:34.794"/>
-</kw>
-<status status="PASS" starttime="20220809 12:11:34.691" endtime="20220809 12:11:34.794"/>
-</kw>
-<status status="PASS" starttime="20220809 12:11:34.690" endtime="20220809 12:11:34.794"/>
+<msg timestamp="20220809 16:42:54.648" level="INFO">Clicking element '(//span[text()='E-mail'])[1]'.</msg>
+<status status="PASS" starttime="20220809 16:42:54.644" endtime="20220809 16:42:54.966"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220809 12:11:35.800" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220809 12:11:34.794" endtime="20220809 12:11:35.801"/>
+<msg timestamp="20220809 16:42:55.974" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220809 16:42:54.966" endtime="20220809 16:42:55.974"/>
 </kw>
-<kw name="Mouse Over" library="SeleniumLibrary">
-<arg>//a[@title='Menut']</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20220809 12:11:35.801" level="INFO">Simulating Mouse Over on element '//a[@title='Menut']'.</msg>
-<status status="PASS" starttime="20220809 12:11:35.801" endtime="20220809 12:11:36.113"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//a[text()='A la Carte']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220809 12:11:36.113" endtime="20220809 12:11:36.155"/>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>id=thirdPartyFrame_mail</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220809 16:42:55.974" level="INFO">Selecting frame 'id=thirdPartyFrame_mail'.</msg>
+<status status="PASS" starttime="20220809 16:42:55.974" endtime="20220809 16:42:56.125"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>//a[text()='A la Carte']</arg>
+<arg>//a[@data-webdriver="emailLink"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:36.155" level="INFO">Clicking element '//a[text()='A la Carte']'.</msg>
-<status status="PASS" starttime="20220809 12:11:36.155" endtime="20220809 12:11:38.744"/>
+<msg timestamp="20220809 16:42:56.125" level="INFO">Clicking element '//a[@data-webdriver="emailLink"]'.</msg>
+<status status="PASS" starttime="20220809 16:42:56.125" endtime="20220809 16:42:56.318"/>
 </kw>
-<status status="PASS" starttime="20220809 12:11:34.688" endtime="20220809 12:11:38.744"/>
-</kw>
-<kw name="get the ravintola harald's menu" library="RavintolaHarald">
-<var>${HaraldMenu}</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${menu}</var>
-<arg>(//div[@class='container'])[2]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:38.831" level="INFO">${menu} = VIIKINKIEN RETKET
-Suurin osa annoksista voidaan muokata laktoosittomiksi tai gluteenittomiksi. Kerrothan henkilökunnallemme ruoka-allergiastasi tai ruokaintoleranssistasi.
-PATAVAHTIEN VALITSEMAT MENUK...</msg>
-<status status="PASS" starttime="20220809 12:11:38.750" endtime="20220809 12:11:38.831"/>
-</kw>
-<msg timestamp="20220809 12:11:38.834" level="INFO">${HaraldMenu} = VIIKINKIEN RETKET
-Suurin osa annoksista voidaan muokata laktoosittomiksi tai gluteenittomiksi. Kerrothan henkilökunnallemme ruoka-allergiastasi tai ruokaintoleranssistasi.
-PATAVAHTIEN VALITSEMAT MENUK...</msg>
-<status status="PASS" starttime="20220809 12:11:38.748" endtime="20220809 12:11:38.834"/>
-</kw>
-<kw name="Menu 1" library="MenuCollector">
-<arg>${HaraldMenu}</arg>
-<status status="PASS" starttime="20220809 12:11:38.834" endtime="20220809 12:11:38.836"/>
-</kw>
-<kw name="End webtest" library="Common" type="TEARDOWN">
 <kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220809 12:11:43.851" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20220809 12:11:38.841" endtime="20220809 12:11:43.851"/>
+<msg timestamp="20220809 16:42:59.323" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220809 16:42:56.318" endtime="20220809 16:42:59.323"/>
 </kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220809 12:11:43.851" endtime="20220809 12:11:46.050"/>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220809 16:42:59.324" endtime="20220809 16:42:59.328"/>
 </kw>
-<status status="PASS" starttime="20220809 12:11:38.841" endtime="20220809 12:11:46.050"/>
-</kw>
-<tag>1</tag>
-<status status="PASS" starttime="20220809 12:11:21.946" endtime="20220809 12:11:46.050"/>
-</test>
-<test id="s1-t2" name="Get Bistro Popot Restaurant's menu" line="28">
-<kw name="Begin webtest" library="Common" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220809 12:11:46.050" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
-<status status="PASS" starttime="20220809 12:11:46.050" endtime="20220809 12:11:50.643"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220809 12:11:50.643" endtime="20220809 12:11:50.773"/>
-</kw>
-<kw name="accept cookies" library="Common">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${COOKIES}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220809 12:11:50.773" endtime="20220809 12:11:50.805"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${COOKIES}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:50.806" level="INFO">Clicking element 'xpath=(//div[@class='QS5gu sy4vM'])[2]'.</msg>
-<status status="PASS" starttime="20220809 12:11:50.805" endtime="20220809 12:11:50.901"/>
-</kw>
-<status status="PASS" starttime="20220809 12:11:50.773" endtime="20220809 12:11:50.901"/>
-</kw>
-<status status="PASS" starttime="20220809 12:11:46.050" endtime="20220809 12:11:50.901"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>go to Google</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220809 12:11:50.901" level="INFO">go to Google</msg>
-<status status="PASS" starttime="20220809 12:11:50.901" endtime="20220809 12:11:50.901"/>
-</kw>
-<kw name="search for restaurants in Lahti" library="google">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${Google_input_bar}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220809 12:11:50.910" endtime="20220809 12:11:50.930"/>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>xpath=//*[@id="thirdPartyFrame_mail"]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220809 16:42:59.328" level="INFO">Selecting frame 'xpath=//*[@id="thirdPartyFrame_mail"]'.</msg>
+<status status="PASS" starttime="20220809 16:42:59.328" endtime="20220809 16:42:59.385"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${Google_input_bar}</arg>
-<arg>Best restaurants in Lahti</arg>
+<arg>xpath=/html/body/div[3]/div[3]/div[3]/div[1]/div[1]/div/form/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div/div/ul/li/input</arg>
+<arg>${Receiver}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:50.930" level="INFO">Typing text 'Best restaurants in Lahti' into text field 'xpath=//input[@name='q']'.</msg>
-<status status="PASS" starttime="20220809 12:11:50.930" endtime="20220809 12:11:51.250"/>
+<msg timestamp="20220809 16:42:59.387" level="INFO">Typing text 'EtteplanReceiver@europe.com' into text field 'xpath=/html/body/div[3]/div[3]/div[3]/div[1]/div[1]/div/form/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div/div/ul/li/input'.</msg>
+<status status="PASS" starttime="20220809 16:42:59.385" endtime="20220809 16:42:59.565"/>
 </kw>
-<kw name="Press Keys" library="SeleniumLibrary">
-<arg>${Google_input_bar}</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20220809 12:11:51.252" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@name='q'] element.</msg>
-<msg timestamp="20220809 12:11:51.546" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20220809 12:11:51.546" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20220809 12:11:51.250" endtime="20220809 12:11:53.108"/>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220809 16:42:59.565" endtime="20220809 16:42:59.578"/>
 </kw>
-<status status="PASS" starttime="20220809 12:11:50.908" endtime="20220809 12:11:53.108"/>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>xpath=//*[@id="thirdPartyFrame_mail"]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220809 16:42:59.578" level="INFO">Selecting frame 'xpath=//*[@id="thirdPartyFrame_mail"]'.</msg>
+<status status="PASS" starttime="20220809 16:42:59.578" endtime="20220809 16:42:59.613"/>
 </kw>
-<kw name="get restaurant names" library="google">
-<var>@{RestaurantNames}</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${r1_name}</var>
-<arg>${r1_location}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:53.156" level="INFO">${r1_name} = Ravintola Taivaanranta</msg>
-<status status="PASS" starttime="20220809 12:11:53.110" endtime="20220809 12:11:53.156"/>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>xpath=//*[@id="cke_1_contents"]/iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220809 16:42:59.615" level="INFO">Selecting frame 'xpath=//*[@id="cke_1_contents"]/iframe'.</msg>
+<status status="PASS" starttime="20220809 16:42:59.613" endtime="20220809 16:42:59.668"/>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${r2_name}</var>
-<arg>${r2_location}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:53.197" level="INFO">${r2_name} = Coppa Eatery</msg>
-<status status="PASS" starttime="20220809 12:11:53.156" endtime="20220809 12:11:53.197"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=body</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220809 16:42:59.668" endtime="20220809 16:42:59.708"/>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${r3_name}</var>
-<arg>${r3_location}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:53.240" level="INFO">${r3_name} = Santa Fé</msg>
-<status status="PASS" starttime="20220809 12:11:53.197" endtime="20220809 12:11:53.240"/>
+<status status="PASS" starttime="20220809 16:42:54.644" endtime="20220809 16:42:59.708"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${r1_name}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220809 12:11:53.240" level="INFO">Ravintola Taivaanranta</msg>
-<status status="PASS" starttime="20220809 12:11:53.240" endtime="20220809 12:11:53.240"/>
+<status status="PASS" starttime="20220809 16:42:54.644" endtime="20220809 16:42:59.708"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${r2_name}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220809 12:11:53.245" level="INFO">Coppa Eatery</msg>
-<status status="PASS" starttime="20220809 12:11:53.245" endtime="20220809 12:11:53.245"/>
+<kw name="Txt To String" library="MenuCollector">
+<var>${txt}</var>
+<msg timestamp="20220809 16:42:59.726" level="INFO">${txt} = VIIKINKIEN RETKET
+Suurin osa annoksista voidaan muokata laktoosittomiksi tai gluteenittomiksi. Kerrothan henkilökunnallemme ruoka-allergiastasi tai ruokaintoleranssistasi.
+PATAVAHTIEN VALITSEMAT MENUK...</msg>
+<status status="PASS" starttime="20220809 16:42:59.713" endtime="20220809 16:42:59.726"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${r3_name}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220809 12:11:53.245" level="INFO">Santa Fé</msg>
-<status status="PASS" starttime="20220809 12:11:53.245" endtime="20220809 12:11:53.245"/>
+<kw name="txt to string" library="Mail">
+<arg>${txt}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=body</arg>
+<arg>${txt}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220809 16:42:59.726" level="INFO">Typing text 'VIIKINKIEN RETKET
+Suurin osa annoksista voidaan muokata laktoosittomiksi tai gluteenittomiksi. Kerrothan henkilökunnallemme ruoka-allergiastasi tai ruokaintoleranssistasi.
+PATAVAHTIEN VALITSEMAT MENUKOKONAISUUDET VALMIIKSI MIETITTYINÄ
+HARALD SINIHAMPAAN RETKI – 44,90
+EVAKON LOHIPIIRAKKA M
+Riisipiirakan päälle kootaan punajuurigraavattua lohta, mummon fenkolikurkkuja ja ituja vierellään sinappihummusta ja jokirapuja.
+BROILERIA BIRKAN TARHASTA L, G
+Pariloitua broilerinrintaa ja paistettua Kolatun vuohenjuustocheddaria, Viikinkien kilpiperunaa, karhunvatukkakastia, paahdettuja juureksia sekä raparperihilloketta.
+VALHALLAN SUKLAAKAKKUA L (SISÄLTÄÄ GLUTEENITONTA KAURAA)
+Valhalla-nougatkuorrutettua suklaakakkua ja mansikka-raparperisorbettia koristettuna pähkinä-kauragranolalla ja kauden marjoilla.
+  GORM VANHAN RETKI  – 50,80 €
+SIENIKEITTOA EMBLAN PADASTA L
+Kermaisen pehmeää sienikeittoa kauden sienistä, paahdettua saaristolaisleipää ja kirnuvoita.
+ANDVARIN LOHTA L, G
+Paistettua merilohta, jokirapuja ja merileväkaviaaria, perunavoita sekä yrttiöljyssä paistettuja kauden kasviksia ja skyr-kananmunakastiketta.
+HALTIJAVÄEN RÄISKÄLEET L
+Gluteenittomana +2 €
+Paistettuja lettuja ja kirnupiimämoussea kettukarkkijäätelön, kauden marjojen ja mansikkahillon kera.
+  ERIK PUNAISEN RETKI – 35,70 €
+VÖLAN VIHREÄ SALAATTI VE, M
+Raikasta salaattia ja metsämarjavinegretteä, ituja, pikkelöityä tomaattia, mummon fenkolikurkkuja, retiisiä, belugalinssejä, hunajamelonisalsaa sekä punajuuririeskaa.
+TERVANPOLTTAJAN TEMPEPIHVI VE, M
+Terva-bbq-marinoitua hernetempepihviä ja paistettua sydänsalaattia, paistos mustasta kvinoasta, kaurasta ja soijapavuista, savumantelikastia, sinappihummusta ja punajuuririeskaa.
+HUNAJASUUN RIISIPIIRAKKA VE, M
+Sokerihuurrettu riisipiirakka, korvapuustimoussea ja mansikkahilloa sekä kauden marjoja.
+  BJÖRN RAUTAKYLJEN RETKI – 52,10 €
+PIIKA-PLIKAN ALKUHYVÄ L
+Punajuurigraavattua lohta, tervasilakkaa, revittyä naudanposkea, isokauriin­salamia, sinappihummusta, mummon fenkolikurkkua, ituja ja retiisiä sekä saaristolaisleivällä savuhirvimoussea.
+ROIHUJEN RANNIKON ROSVOPAISTIA L, G
+Karitsan rosvopaistia, perunavoita, paistinkastia, paahdettuja juureksia sekä suolakurkkua ja tervattua puolukkaa.
+HARALDIN TERVAINEN L (SISÄLTÄÄ GLUTEENITONTA KAURAA)
+Haraldin tervajäätelöä, vaahterasiirappia, pähkinä-kauragranolaa ja kauden marjoja.
+  KUNINKAAN KESTIT KAHDELLE – 140,40 €. LISÄVIIKINKI – 70,20 €/HLÖ
+VALMISTETAAN VÄHINTÄÄN KAHDELLE
+AASOJEN ALKUKILPI L
+Päreelle poimitaan revittyä naudanposkea, isokauriinsalamia, broilerin sydäntä, tervattua silakkaa, marinoitua jokirapua sekä punajuurigraavattua lohta. Lisäksi raikasta salaattia ja metsämarjavinegretteä, ituja, pikkelöityä tomaattia, mummon fenkolikurkkua, retiisiä, belugalinssejä ja hunajamelonisalsaa sekä paistettua Saloniemen vuohenmaitojuustoa. Punajuuririeskaa ja saaristolaisleipää sekä raparperihilloketta, savuhirvimoussea ja kuivaliharouhetta, skyr-kananmunakastiketta ja merileväkaviaaria.
+BALDURIN KILPI  G
+Kilvelle kerätään karitsan rosvopaistia, isokauriin entrecotea, pariloitua broilerinrintaa ja mausteista rypsipossunkylkeä vierellään kermaista juustoperunaa, Viikinkien kilpiperunaa ja paahdettuja juureksia, Viisauden viinikastia, paistinkastia sekä raparperihilloketta.
+VAANIEN JÄLKIKILPI L
+Makean nälkään koottiin pirtin parhaimmat tarjolle: Valhalla-nougatkuorrutettua suklaakakkua ja pähkinä-kauragranolaa, paistettuja lettuja, sokerihuurrettua riisipiirakkaa, tyrni-suklaakonvehteja, tervajäätelöä, mansikka-raparperisorbettia ja kettukarkkijäätelöä, kirnupiimämoussea, mansikkahilloa sekä korvapuustimoussea.
+  ALKUHYVÄT
+VÖLAN VIHREÄ SALAATTI VE – 6,90 €
+Raikasta salaattia ja metsämarjavinegretteä, ituja, pikkelöityä tomaattia, mummon fenkolikurkkuja, retiisiä, belugalinssejä, hunajamelonisalsaa sekä punajuuririeskaa.
+  LINNAVUOREN JUUSTOSALAATTI L
+Alkuun – 9,90 €
+Pääruuaksi – 19,60 €
+Paistettua Saloniemen vuohenmaitojuustoa sekä piparjuurihummusta, raikasta salaattia ja metsämarjavinegretteä, ituja, pikkelöityä tomaattia, mummon fenkolikurkkua, retiisiä, belugalinssejä ja hunajamelonisalsaa sekä punajuuririeskaa.
+          3. SKALDIN PAREMPI LOHISALAATTI L
+Alkuun – 10,80 €
+Pääruuaksi – 17,90 €
+Punajuurigraavattua lohta, jokirapua ja merileväkaviaaria. Lisäksi marinoitua sydänsalaattia, ituja, skyr-kananmunakastiketta sekä punajuuririeskaa.
+  HOVIN PAREMPI KANASALAATTI L
+Alkuun – 11,60 €
+Pääruuaksi – 18,40 €
+Friteerattua broileria, paistettua Saloniemen vuohenmaitojuustoa ja piparjuurihummusta, marinoitua sydänsalaattia, pikkelöityä tomaattia ja retiisiä sekä punajuuririeskaa koristettuna metsämarjavinegretellä.
+  SIENIKEITTOA EMBLAN PADASTA L
+Alkuun – 11,30 €
+Pääruuaksi – 16,20 €
+Kermaisen pehmeää sienikeittoa kauden sienistä, paahdettua saaristolais­leipää ja kirnuvoita.
+  EVAKON LOHIPIIRAKKA M – 10,90 €
+Riisipiirakan päälle kootaan punajuurigraavattua lohta, mummon fenkoli­kurkkuja ja ituja vierellään sinappihummusta ja jokirapuja.
+  PIIKA-PLIKAN ALKUHYVÄ L – 14,60 €
+Punajuurigraavattua lohta, tervasilakkaa, revittyä naudanposkea, isokauriin­salamia, sinappihummusta, mummon fenkolikurkkua, ituja ja retiisiä sekä saaristolaisleivällä savuhirvimoussea
+  AASOJEN ALKUKILPI KAHDELLE L – 34,60 €. LISÄVIIKINKI – 17,30 €/HLÖ
+VALMISTETAAN VÄHINTÄÄN KAHDELLE
+Päreelle poimitaan revittyä naudanposkea, isokauriinsalamia, broilerin sydäntä, tervattua silakkaa, marinoitua jokirapua sekä punajuurigraavattua lohta. Lisäksi raikasta salaattia ja metsämarjavinegretteä, ituja, pikkelöityä tomaattia, mummon fenkolikurkkua, retiisiä, belugalinssejä ja hunajameloni­salsaa sekä paistettua Saloniemen vuohenmaitojuustoa. Punajuuririeskaa ja saaristolaisleipää sekä raparperihilloketta, savuhirvimoussea ja kuivaliha­rouhetta, skyr-kananmunakastiketta ja merileväkaviaaria.
+    PÄÄHYVÄT
+TERVANPOLTTAJAN TEMPEPIHVI VE, M – 26,20 €
+Terva-bbq-marinoitua hernetempepihviä ja paistettua sydänsalaattia, paistos mustasta kvinoasta, kaurasta ja soijapavuista, savumantelikastia, sinappi­hummusta ja punajuuririeskaa.
+  ANDVARIN LOHTA L, G – 27,30 €
+Paistettua merilohta, jokirapuja ja merileväkaviaaria, perunavoita sekä yrttiöljyssä paistettuja kauden kasviksia ja skyr-kananmunakastiketta.
+  BROILERIA BIRKAN TARHASTA L, G – 24,60 €
+Pariloitua broilerinrintaa ja paistettua Kolatun vuohenjuustocheddaria, Viikinkien kilpiperunaa, karhunvatukkakastia, paahdettuja juureksia sekä raparperihilloketta.
+  MIELIKIN METSÄKYYHKYÄ M – 28,40 €
+Kyyhkynrintaa, karhunvatukkakastia ja paistosta mustasta kvinoasta, kaurasta ja soijapavuista, aprikoosi-sipulihilloketta sekä paahdettuja juureksia.
+  VILHELM PITKÄPUUKON POSSUA G
+200 g – 22,30 €
+400 g – 32,70 €
+Mausteista rypsipossunkylkeä, pariloitua porsaan etuselkää, kermaista juustoperunaa, savumantelikastia, aprikoosi-sipulihilloketta sekä yrttiöljyssä paistettuja kauden kasviksia.
+  BARBAARIEN HIRVIBURGERI L – 23,90 €
+(+2 € gluteenittomana)
+Paahdetun perunasämpylän väliin kootaan 180 g hirvipihviä ja reilu siivu mausteista rypsipossunkylkeä, Kolatun vuohenjuustocheddaria, raikasta salaattia, viikinkien terva-bbq-kastiketta, suolakurkkua sekä talon majoneesia vierellään Viikinkien kilpiperunaa.
+  POHJOLAN SOTURIN TALKOOPANNU G – 26,90 €
+Pannulle kootaan ylikypsää isokauriin entrecotea, pariloitua mausteista rypsipossunkylkeä, riista-chorizomakkaraa, kermaista juustoperunaa, paistinkastia, suolakurkkua ja paahdettuja juureksia.
+  HÄRÄNPIHVIÄ DAANIEN TAPAAN M, G
+150 g – 28,90 €
+300 g – 37,90 €
+Viipaloitua Black Angus- härän Petit tenderiä ja kuivaliharouhetta, Viikinkien kilpiperunaa, Viisauden viinikastia sekä paahdettuja juureksia ja sinappi­hummusta.
+  ROIHUJEN RANNIKON ROSVOPAISTIA L, G – 28,60 €
+Karitsan rosvopaistia, perunavoita, paistinkastia, paahdettuja juureksia sekä suolakurkkua ja tervattua puolukkaa.
+  POROA JA PEURAA OLAVI PYHÄN HOVISTA L, G – 38,90 €
+Mureaa poron sisäfileetä sekä kuusipeuran ulkofileetä, savuhirvimoussea ja kuivaliharouhetta, perunavoita, kermaista sienikastiketta, paistinkastia, tervattua puolukkaa ja paahdettuja juureksia.
+  BALDURIN KILPI KAHDELLE G – 69,60 €. LISÄVIIKINKI – 34,80 €/HLÖ
+VALMISTETAAN VÄHINTÄÄN KAHDELLE
+Kilvelle kerätään karitsan rosvopaistia, isokauriin entrecotea, pariloitua broilerinrintaa ja mausteista rypsipossunkylkeä vierellään kermaista juusto­perunaa, Viikinkien kilpiperunaa ja paahdettuja juureksia, Viisauden viini -kastia, paistinkastia sekä raparperihilloketta.
+  YMIR JÄTTILÄISEN RIISTAMIEKKA G
+Yhdelle 43,50 €
+Kahdelle 86,80 €
+Miekkaan pujotetaan poron sisäfileetä, kuusipeuran ulkofileetä, kyyhkyn­rintaa, riista-chorizomakkaraa sekä paprikaa ja kesäkurpitsaa. Vierellä kermaista juustoperunaa, Viikinkien kilpiperunaa ja paahdettuja juureksia, sienikastia, karhunvatukkakastia sekä aprikoosi-sipulihilloketta.
+  JÄLKIHYVÄT
+VAANIEN JÄLKIKILPI KAHDELLE L – 37,80 €. LISÄVIIKINKI – 18,90 €/HLÖ
+Gluteenittomana +1 €/hlö
+VALMISTETAAN VÄHINTÄÄN KAHDELLE
+Makean nälkään koottiin pirtin parhaimmat tarjolle: Valhalla-nougatkuorrutettua suklaakakkua ja pähkinä-kauragranolaa, paistettuja lettuja, sokerihuurrettua riisipiirakkaa, tyrni-suklaakonvehteja, tervajäätelöä, mansikka-raparperisorbettia ja kettukarkkijäätelöä, kirnu­piimämoussea, mansikkahilloa sekä korvapuustimoussea.
+  HARALDIN TERVAINEN L – 9,60 €
+(sisältää gluteenitonta kauraa)
+Haraldin tervajäätelöä, vaahterasiirappia, pähkinä-kauragranolaa ja kauden marjoja.
+  VALHALLAN SUKLAAKAKKUA L – 10,20 €
+(sisältää gluteenitonta kauraa)
+Valhalla-nougatkuorrutettua suklaakakkua ja mansikka-raparperisorbettia koristettuna pähkinä-kauragranolalla ja kauden marjoilla
+  HUNAJASUUN RIISIPIIRAKKA VE, M – 10,20 €
+Sokerihuurrettu riisipiirakka, korvapuustimoussea ja mansikkahilloa sekä kauden marjoja.
+  SILKKIPARRAN JÄLKIRUOKAPÄRE L – 16,50 €
+Gluteenittomana +1 €
+Kasattiin päreelle kaikkea hyvää: Valhalla-nougatkuorrutettua suklaa­kakkua, paistettu lettu, kettukarkkijäätelöä, kirnupiimämoussea, kauden marjoja ja mansikkahilloa.
+  HALTIJAVÄEN RÄISKÄLEET L – 12,90 €
+Gluteenittomana +2 €
+Paistettuja lettuja ja kirnupiimämoussea kettukarkkijäätelön, kauden marjojen ja mansikkahillon kera.
+  LETTUKESTIT L – 20,90 €
+(yhteiseen lettunälkään 2–3 hlö)
+Gluteenittomana +5 €
+Paistettuja lettuja ja vaahterasiirappia, mansikka-raparperisorbettia, kauden marjojen ja mansikkahillon kera.
+  JÄÄJÄTTILÄISEN JÄÄTELÖT:
+1 pallo – 4,80 €
+2 palloa – 7,20 €
+VALITSE MIELEISESI NÄISTÄ:
+Tervajäätelö, kettukarkkijäätelö tai vaniljajäätelö L
+Maidoton suklaajäätelö tai mansikka-raparperisorbetti M
+JÄÄTELÖN SEURAKSI:
+kauden marjoja, mansikkahillo, suklaakastike, vaahterasiirappi
+  PIENTÄ MAKEAA KAHVIN KYLKEEN G – 2,30 €
+Haraldin tyrni- suklaakonvehti
+Käsintehty suklaakonvehti Mercedes Chocolaterien suklaatehtaalta Ahvenanmaalta
+  WWW.RAVINTOLAHARALD.FI
+Pidätämme oikeuden hinnanmuutoksiin.' into text field 'id=body'.</msg>
+<status status="PASS" starttime="20220809 16:42:59.726" endtime="20220809 16:43:09.436"/>
 </kw>
-<kw name="Create List" library="BuiltIn">
-<var>@{Data}</var>
-<arg>${r1_name}</arg>
-<arg>${r2_name}</arg>
-<arg>${r3_name}</arg>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20220809 12:11:53.245" level="INFO">@{Data} = [ Ravintola Taivaanranta | Coppa Eatery | Santa Fé ]</msg>
-<status status="PASS" starttime="20220809 12:11:53.245" endtime="20220809 12:11:53.245"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220809 16:43:19.444" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20220809 16:43:09.436" endtime="20220809 16:43:19.444"/>
 </kw>
-<msg timestamp="20220809 12:11:53.245" level="INFO">@{RestaurantNames} = [ Ravintola Taivaanranta | Coppa Eatery | Santa Fé ]</msg>
-<status status="PASS" starttime="20220809 12:11:53.110" endtime="20220809 12:11:53.245"/>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220809 16:43:19.445" endtime="20220809 16:43:19.445"/>
 </kw>
-<kw name="go to Bistro Popot" library="google">
-<arg>Bistro Popot - Bistro Popot – Ravintola Lahden keskustassa</arg>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>https://bistropopot.fi/</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220809 12:11:53.250" level="INFO">Opening url 'https://bistropopot.fi/'</msg>
-<status status="PASS" starttime="20220809 12:11:53.250" endtime="20220809 12:11:54.946"/>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>xpath=//*[@id="thirdPartyFrame_mail"]</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220809 16:43:19.453" level="INFO">Selecting frame 'xpath=//*[@id="thirdPartyFrame_mail"]'.</msg>
+<status status="PASS" starttime="20220809 16:43:19.453" endtime="20220809 16:43:19.503"/>
 </kw>
-<kw name="Get Title" library="SeleniumLibrary">
-<var>${title}</var>
-<doc>Returns the title of the current page.</doc>
-<msg timestamp="20220809 12:11:54.960" level="INFO">${title} = Bistro Popot - Bistro Popot – Ravintola Lahden keskustassa</msg>
-<status status="PASS" starttime="20220809 12:11:54.946" endtime="20220809 12:11:54.960"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=compose-form-submit-send</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220809 16:43:19.503" level="INFO">Clicking element 'id=compose-form-submit-send'.</msg>
+<status status="PASS" starttime="20220809 16:43:19.503" endtime="20220809 16:43:19.662"/>
 </kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<arg>MENU</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" starttime="20220809 12:11:54.960" endtime="20220809 12:11:55.001"/>
-</kw>
-<status status="PASS" starttime="20220809 12:11:53.250" endtime="20220809 12:11:55.001"/>
-</kw>
-<kw name="get bistro popot's menu" library="BistroPopot">
-<var>@{BistroPopot}</var>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${starters}</var>
-<arg>id=div_block-78-9</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:55.060" level="INFO">${starters} = Alkuun / Starters
-Starters or to share
-Päivän keitto
-Soup of the day
-9,80€
-
-     Katkarapu-kylmäsavunieriä skagen, Maalahden limppua, marinoitua punasipulia, keltuaisgeeliä ja pikkelöityä kurkkua L (G...</msg>
-<status status="PASS" starttime="20220809 12:11:55.011" endtime="20220809 12:11:55.060"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${mains}</var>
-<arg>id=div_block-87-9</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:55.120" level="INFO">${mains} = Pääruokia
-Mains
-Punaista currya ja paistettua tofua, grillattua pinaattikiinankaalia ja kardemummariisiä Ve, G
-Red curry with fried tofu, grilled bok choy and cardemom rice
-20,90€
-Paistettua ahventa, ...</msg>
-<status status="PASS" starttime="20220809 12:11:55.060" endtime="20220809 12:11:55.120"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${desserts}</var>
-<arg>id=div_block-105-9</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220809 12:11:55.161" level="INFO">${desserts} = Jälkiruokia
-Dessert
-Vanilja créme brulee, sitruunasorbettia ja  mansikoita L,G
-Vanilla créme brulee with lemon sorbet and strawberries
-11,00€
-Popotin suklaakakkua, vaniljajäätelöä ja vadelmahilloketta...</msg>
-<status status="PASS" starttime="20220809 12:11:55.120" endtime="20220809 12:11:55.161"/>
-</kw>
-<kw name="Create List" library="BuiltIn">
-<var>@{menu}</var>
-<arg>${starters}</arg>
-<arg>${mains}</arg>
-<arg>${desserts}</arg>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20220809 12:11:55.161" level="INFO">@{menu} = [ Alkuun / Starters
-Starters or to share
-Päivän keitto
-Soup of the day
-9,80€
-
-     Katkarapu-kylmäsavunieriä skagen, Maalahden limppua, marinoitua punasipulia, keltuaisgeeliä ja pikkelöityä kurkkua L ...</msg>
-<status status="PASS" starttime="20220809 12:11:55.161" endtime="20220809 12:11:55.161"/>
-</kw>
-<msg timestamp="20220809 12:11:55.161" level="INFO">@{BistroPopot} = [ Alkuun / Starters
-Starters or to share
-Päivän keitto
-Soup of the day
-9,80€
-
-     Katkarapu-kylmäsavunieriä skagen, Maalahden limppua, marinoitua punasipulia, keltuaisgeeliä ja pikkelöityä kurkkua L ...</msg>
-<status status="PASS" starttime="20220809 12:11:55.011" endtime="20220809 12:11:55.161"/>
-</kw>
-<kw name="Menu 2" library="MenuCollector">
-<arg>@{BistroPopot} [1]</arg>
-<arg>@{BistroPopot} [2]</arg>
-<arg>@{BistroPopot} [3]</arg>
-<msg timestamp="20220809 12:11:55.165" level="INFO">['Alkuun / Starters\nStarters or to share\nPäivän keitto\nSoup of the day\n9,80€\n\n     Katkarapu-kylmäsavunieriä skagen, Maalahden limppua, marinoitua punasipulia, keltuaisgeeliä ja pikkelöityä kurkkua L (G)\nShrimp and cold smoked arctic char skagen, marinated red onion, yolk gel and pickled cucumber\n14,30€\n  Salaatti grillatusta mustekalasta, vaniljavinegretteä L, G\nGrilled squid salad, vanilla vinaigrette\n13,70€\nPorkkanatartar ja naattipestoa, wakamea ja siemennäkkileipää Ve, G\nCarrot tartar, with root plant leave pesto, wakame and seed crisp bread\n12,90€\n\nKana yakitori, togarashimajoneesia ja ranskanperunat L\nChicken yakitori with togarashi mayonnaise and fries\n13,30€\n\nPopotlauta : valikoima alkupaloja\n17,00€/hlö min. tilaus 2 hlö\nPopot antipasto, prepared min. 2 persons', 'Pääruokia\nMains\nPunaista currya ja paistettua tofua, grillattua pinaattikiinankaalia ja kardemummariisiä Ve, G\nRed curry with fried tofu, grilled bok choy and cardemom rice\n20,90€\nPaistettua ahventa, valkoviini-voikastiketta, sitruuna-perunapyreetä, grillattua porkkanaa ja friteerattua lehtikaalia L, G\nFried perch, white wine butter sauce, lemon potato pure, grilled carrot and deep fried kale\n26,70€\nGrillattu Iberico-possun entrecôte, barbecuekastiketta, perunankuoria, pistokasvispataa ja aiolia L, G\nGrilled Iberico pork entrecôte with barbecue sauce, potato skins, stewed vegetables and pisto, aioli\n26,50€\nSinisimpukoita valkosipulikastikkeessa, ranskanperunoita ja aiolia L,G\nMussels in garlic sauce with french fries and aioli\n22,90€\nMaa-artisokkarisottoa ja grillattua maa-artisokkaa G\nJerusalem artichoke risotto and grilled artichoke\n21,40€\n ', 'Jälkiruokia\nDessert\nVanilja créme brulee, sitruunasorbettia ja  mansikoita L,G\nVanilla créme brulee with lemon sorbet and strawberries\n11,00€\nPopotin suklaakakkua, vaniljajäätelöä ja vadelmahilloketta L,G\nHouse chocolate cake with vanilla ice cream and sangria jam\n11,60€\nPassionmoussea, marinoitua mangoa, kauragranolaa ja kookosjäätelöä Ve, G\nPassion fruit mousse, marinated mango, oat granola and coconut ice cream\n10,90€'] [1]
-['Alkuun / Starters\nStarters or to share\nPäivän keitto\nSoup of the day\n9,80€\n\n     Katkarapu-kylmäsavunieriä skagen, Maalahden limppua, marinoitua punasipulia, keltuaisgeeliä ja pikkelöityä kurkkua L (G)\nShrimp and cold smoked arctic char skagen, marinated red onion, yolk gel and pickled cucumber\n14,30€\n  Salaatti grillatusta mustekalasta, vaniljavinegretteä L, G\nGrilled squid salad, vanilla vinaigrette\n13,70€\nPorkkanatartar ja naattipestoa, wakamea ja siemennäkkileipää Ve, G\nCarrot tartar, with root plant leave pesto, wakame and seed crisp bread\n12,90€\n\nKana yakitori, togarashimajoneesia ja ranskanperunat L\nChicken yakitori with togarashi mayonnaise and fries\n13,30€\n\nPopotlauta : valikoima alkupaloja\n17,00€/hlö min. tilaus 2 hlö\nPopot antipasto, prepared min. 2 persons', 'Pääruokia\nMains\nPunaista currya ja paistettua tofua, grillattua pinaattikiinankaalia ja kardemummariisiä Ve, G\nRed curry with fried tofu, grilled bok choy and cardemom rice\n20,90€\nPaistettua ahventa, valkoviini-voikastiketta, sitruuna-perunapyreetä, grillattua porkkanaa ja friteerattua lehtikaalia L, G\nFried perch, white wine butter sauce, lemon potato pure, grilled carrot and deep fried kale\n26,70€\nGrillattu Iberico-possun entrecôte, barbecuekastiketta, perunankuoria, pistokasvispataa ja aiolia L, G\nGrilled Iberico pork entrecôte with barbecue sauce, potato skins, stewed vegetables and pisto, aioli\n26,50€\nSinisimpukoita valkosipulikastikkeessa, ranskanperunoita ja aiolia L,G\nMussels in garlic sauce with french fries and aioli\n22,90€\nMaa-artisokkarisottoa ja grillattua maa-artisokkaa G\nJerusalem artichoke risotto and grilled artichoke\n21,40€\n ', 'Jälkiruokia\nDessert\nVanilja créme brulee, sitruunasorbettia ja  mansikoita L,G\nVanilla créme brulee with lemon sorbet and strawberries\n11,00€\nPopotin suklaakakkua, vaniljajäätelöä ja vadelmahilloketta L,G\nHouse chocolate cake with vanilla ice cream and sangria jam\n11,60€\nPassionmoussea, marinoitua mangoa, kauragranolaa ja kookosjäätelöä Ve, G\nPassion fruit mousse, marinated mango, oat granola and coconut ice cream\n10,90€'] [2]
-['Alkuun / Starters\nStarters or to share\nPäivän keitto\nSoup of the day\n9,80€\n\n     Katkarapu-kylmäsavunieriä skagen, Maalahden limppua, marinoitua punasipulia, keltuaisgeeliä ja pikkelöityä kurkkua L (G)\nShrimp and cold smoked arctic char skagen, marinated red onion, yolk gel and pickled cucumber\n14,30€\n  Salaatti grillatusta mustekalasta, vaniljavinegretteä L, G\nGrilled squid salad, vanilla vinaigrette\n13,70€\nPorkkanatartar ja naattipestoa, wakamea ja siemennäkkileipää Ve, G\nCarrot tartar, with root plant leave pesto, wakame and seed crisp bread\n12,90€\n\nKana yakitori, togarashimajoneesia ja ranskanperunat L\nChicken yakitori with togarashi mayonnaise and fries\n13,30€\n\nPopotlauta : valikoima alkupaloja\n17,00€/hlö min. tilaus 2 hlö\nPopot antipasto, prepared min. 2 persons', 'Pääruokia\nMains\nPunaista currya ja paistettua tofua, grillattua pinaattikiinankaalia ja kardemummariisiä Ve, G\nRed curry with fried tofu, grilled bok choy and cardemom rice\n20,90€\nPaistettua ahventa, valkoviini-voikastiketta, sitruuna-perunapyreetä, grillattua porkkanaa ja friteerattua lehtikaalia L, G\nFried perch, white wine butter sauce, lemon potato pure, grilled carrot and deep fried kale\n26,70€\nGrillattu Iberico-possun entrecôte, barbecuekastiketta, perunankuoria, pistokasvispataa ja aiolia L, G\nGrilled Iberico pork entrecôte with barbecue sauce, potato skins, stewed vegetables and pisto, aioli\n26,50€\nSinisimpukoita valkosipulikastikkeessa, ranskanperunoita ja aiolia L,G\nMussels in garlic sauce with french fries and aioli\n22,90€\nMaa-artisokkarisottoa ja grillattua maa-artisokkaa G\nJerusalem artichoke risotto and grilled artichoke\n21,40€\n ', 'Jälkiruokia\nDessert\nVanilja créme brulee, sitruunasorbettia ja  mansikoita L,G\nVanilla créme brulee with lemon sorbet and strawberries\n11,00€\nPopotin suklaakakkua, vaniljajäätelöä ja vadelmahilloketta L,G\nHouse chocolate cake with vanilla ice cream and sangria jam\n11,60€\nPassionmoussea, marinoitua mangoa, kauragranolaa ja kookosjäätelöä Ve, G\nPassion fruit mousse, marinated mango, oat granola and coconut ice cream\n10,90€'] [3]</msg>
-<status status="PASS" starttime="20220809 12:11:55.161" endtime="20220809 12:11:55.165"/>
+<status status="PASS" starttime="20220809 16:42:59.726" endtime="20220809 16:43:19.663"/>
 </kw>
 <kw name="End webtest" library="Common" type="TEARDOWN">
 <kw name="Sleep" library="BuiltIn">
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220809 12:12:00.180" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20220809 12:11:55.170" endtime="20220809 12:12:00.181"/>
+<msg timestamp="20220809 16:43:24.673" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220809 16:43:19.664" endtime="20220809 16:43:24.673"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220809 12:12:00.181" endtime="20220809 12:12:02.321"/>
+<status status="PASS" starttime="20220809 16:43:24.673" endtime="20220809 16:43:26.874"/>
 </kw>
-<status status="PASS" starttime="20220809 12:11:55.170" endtime="20220809 12:12:02.321"/>
+<status status="PASS" starttime="20220809 16:43:19.664" endtime="20220809 16:43:26.875"/>
 </kw>
-<tag>2</tag>
-<status status="PASS" starttime="20220809 12:11:46.050" endtime="20220809 12:12:02.321"/>
+<tag>3</tag>
+<status status="PASS" starttime="20220809 16:42:38.963" endtime="20220809 16:43:26.875"/>
 </test>
-<status status="PASS" starttime="20220809 12:11:21.602" endtime="20220809 12:12:02.321"/>
+<status status="PASS" starttime="20220809 16:42:38.593" endtime="20220809 16:43:26.879"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">1</stat>
-<stat pass="1" fail="0" skip="0">2</stat>
+<stat pass="1" fail="0" skip="0">3</stat>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="TC">TC</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC">TC</stat>
 </suite>
 </statistics>
 <errors>

@@ -37,7 +37,11 @@ Get Bistro Popot Restaurant's menu
 
 Send mail
     [Tags]    3
-    navigate to mail.com
+    navigate to mail.com login page
+    login by using the credentials
+    send the mail
+    ${txt} =    MenuCollector.txtToString
+    txt to string    ${txt}
 
 
 
