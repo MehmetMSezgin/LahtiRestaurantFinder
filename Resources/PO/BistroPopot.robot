@@ -9,5 +9,4 @@ get bistro popot's menu
     ${mains} =    get text    id=div_block-87-9
     ${desserts} =    get text    id=div_block-105-9
     @{menu} =  create list    ${starters}    ${mains}    ${desserts}
-    log    @{menu}
     [Return]    @{menu}

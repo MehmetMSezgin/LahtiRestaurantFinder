@@ -6,6 +6,7 @@ Resource    Resources/Common.robot
 Resource    Resources/PO/google.robot
 Resource    Resources/PO/RavintolaHarald.robot
 Resource    Resources/PO/BistroPopot.robot
+Resource    Resources/PO/Mail.robot
 
 
 Test Setup    Begin webtest
@@ -32,6 +33,12 @@ Get Bistro Popot Restaurant's menu
     @{RestaurantNames} =    get restaurant names
     go to Bistro Popot    Bistro Popot - Bistro Popot – Ravintola Lahden keskustassa
     @{BistroPopot} =    get bistro popot's menu
+    MenuCollector.menu2    @{BistroPopot} [1]    @{BistroPopot} [2]    @{BistroPopot} [3]
+
+Send mail
+    [Tags]    3
+    navigate to mail.com
+
 
 
 

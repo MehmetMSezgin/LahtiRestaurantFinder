@@ -28,19 +28,22 @@ get restaurant names
 
 go to Ravintola Harald
     [Arguments]    ${name}
-    click element    ${r2_location}
-    wait until element is visible    (//a[text()='ravintolaharald.fi'])[1]
-    click element    (//a[text()='ravintolaharald.fi'])[1]
+    #click element    ${r2_location}
+    go to    https://www.ravintolaharald.fi/
+    #wait until element is visible    (//a[text()='ravintolaharald.fi'])[1]
+    #click element    (//a[text()='ravintolaharald.fi'])[1]
     ${title} =   get title
-    should contain    ${name}    ${title}
+    #should contain    ${name}    ${title}
 
 go to Bistro Popot
     [Arguments]    ${name}
-    click element    ${r1_location}
-    wait until element is visible    //a[text()='bistropopot.fi']
-    click element    //a[text()='bistropopot.fi']
+    #click element    ${r1_location}
+    go to    https://bistropopot.fi/
+    #wait until element is visible    //a[text()='bistropopot.fi']
+    #click element    //a[text()='bistropopot.fi']
     ${title} =   get title
-    should contain    ${name}    ${title}
+    wait until page contains    MENU
+    #should contain    ${name}    ${title}
 
 
 
