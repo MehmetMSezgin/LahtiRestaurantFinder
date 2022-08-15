@@ -1,6 +1,6 @@
 import smtplib
 from email.message import EmailMessage
-
+#
 msg = EmailMessage()
 msg['Subject'] = 'Training Invitation'
 msg['From'] = 'From Training Team'

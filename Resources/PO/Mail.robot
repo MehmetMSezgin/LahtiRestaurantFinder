@@ -14,6 +14,7 @@ ${Subject} =    Test
 *** Keywords ***
 navigate to mail.com login page
     go to    https://www.mail.com/consentpage
+#   accept cookies of mail
     go to    https://www.mail.com/company/privacypolicy/
     sleep    3s
 
@@ -58,9 +59,10 @@ txt to string
 
 
 
-
-
-
 accept cookies of mail
-    #wait until element is visible    //button[text()='Agree and continue']
+    sleep    2s
+    select frame    //iframe[@class='permission-core-iframe']
+    select frame    //iframe[@style='position: fixed; inset: auto auto 0px 0px; display: block; width: 100%; height: 100%; border: 0px; z-index: 2147483647;']
+    wait until element is visible    //button[@id='onetrust-accept-btn-handler']
     click element    //button[@id='onetrust-accept-btn-handler']
+    unselect frame
