@@ -26,3 +26,10 @@ def txtToString():
     text_file.close()
 
     return data
+
+
+def all_menus():
+    all = open("All_Menus.txt", "w")
+    all.write(menu1())
+    all.write(menu2())
+
