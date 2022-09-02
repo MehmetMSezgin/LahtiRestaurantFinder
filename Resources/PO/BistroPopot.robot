@@ -5,8 +5,8 @@ Library    SeleniumLibrary
 
 *** Keywords ***
 get bistro popot's menu
-    ${starters} =    get text    id=div_block-78-9
-    ${mains} =    get text    id=div_block-87-9
-    ${desserts} =    get text    id=div_block-105-9
+    ${starters} =    get text    //section[@data-id='3feb5c5']
+    ${mains} =    get text    //section[@data-id='8871b04']
+    ${desserts} =    get text    //div[@data-id='cc2724c']
     @{menu} =  create list    ${starters}    ${mains}    ${desserts}
     [Return]    @{menu}

@@ -7,6 +7,8 @@ Resource    Resources/PO/google.robot
 Resource    Resources/PO/RavintolaHarald.robot
 Resource    Resources/PO/BistroPopot.robot
 Resource    Resources/PO/Mail.robot
+Resource    Resources/PO/KujaStreet.robot
+
 
 
 Test Setup    Begin webtest
@@ -35,8 +37,16 @@ Get Bistro Popot Restaurant's menu
     @{BistroPopot} =    get bistro popot's menu
     MenuCollector.menu2    @{BistroPopot} [1]    @{BistroPopot} [2]    @{BistroPopot} [3]
 
-Send mail
+Get Kuja Street's menu
     [Tags]    3
+    log    go to Google
+    search for restaurants in Lahti
+    @{RestaurantNames} =    get restaurant names
+    go to Kuja Street
+
+
+Send mail
+    [Tags]    4
     navigate to mail.com login page
     login by using the credentials
     send the mail

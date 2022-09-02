@@ -42,7 +42,9 @@ go to Bistro Popot
     #wait until element is visible    //a[text()='bistropopot.fi']
     #click element    //a[text()='bistropopot.fi']
     ${title} =   get title
-    wait until page contains    MENU
+    sleep    3s
+    click element    (//a[text()='Ruokalista'])[1]
+    #wait until page contains    MENU
     #should contain    ${name}    ${title}
 
 

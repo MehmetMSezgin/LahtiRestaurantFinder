@@ -4,12 +4,10 @@ def menu1(menu):
 
 
 def menu2(m1, m2, m3):
-    lines = [m1,m2,m3]
-    with open('menu2.txt','w') as f:
+    lines = [m1, m2, m3]
+    with open('menu2.txt', 'w') as f:
         f.write(lines[0])
-        '''for line in lines:
-            f.write(line)
-            f.write('\n')'''
+
 
 def txtToString():
     # open text file in read mode
@@ -22,4 +20,3 @@ def txtToString():
     text_file.close()
 
     return data
-
