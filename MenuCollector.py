@@ -9,6 +9,12 @@ def menu2(m1, m2, m3):
         f.write(lines[0])
 
 
+def menu3(m1, m2, m3, m4):
+    lines = [m1, m2, m3, m4]
+    with open('menu3.txt', 'w') as f:
+        f.write(lines[0])
+
+
 def txtToString():
     # open text file in read mode
     text_file = open("menu1.txt", "r")

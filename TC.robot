@@ -43,7 +43,8 @@ Get Kuja Street's menu
     search for restaurants in Lahti
     @{RestaurantNames} =    get restaurant names
     go to Kuja Street
-
+    @{KujaStreet} =    get Kuja Street's menu
+    Menucollector.menu3    @{KujaStreet} [1]    @{KujaStreet} [2]    @{KujaStreet} [3]    @{KujaStreet} [4]
 
 Send mail
     [Tags]    4
