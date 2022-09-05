@@ -7,6 +7,8 @@ go to Kuja Street
     accept cookies of Kuja Street
 
 get Kuja Street's menu
+    sleep    2s
+    wait until page contains    Lahti
     ${snadit} =    get text    //div[@class='sc-ca2a0d8a-11']
     ${leivat} =    get text    (//div[@class='sc-ca2a0d8a-8 kkvPxA'])[2]
     ${semmosii} =    get text    (//div[@class='sc-ca2a0d8a-8 kkvPxA'])[4]
